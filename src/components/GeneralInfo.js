@@ -1,6 +1,7 @@
 import React from 'react';
 import { Component } from 'react';
 import TextInput from './TextInput';
+import '../styles/App.css';
 
 class GeneralInfo extends Component {
   render() {
