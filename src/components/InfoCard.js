@@ -6,23 +6,27 @@ class InfoCard extends Component {
   render() {
     if (this.props.type === 'education') {
       return (
-        <div>
+        <div className="infoCard">
           <TextInput label="Institution Name" type="text" name="institution" />
           <TextInput
             label="Degree or Certification"
             type="text"
             name="degree"
           />
-          <TextInput label="Finishing Date" type="date" name="date" />
+          <TextInput
+            label="Completion Date"
+            type="date"
+            name="completionDate"
+          />
         </div>
       );
     } else if (this.props.type === 'job') {
       return (
-        <div>
+        <div className="infoCard">
           <TextInput label="Organization" type="text" name="organization" />
           <TextInput label="Job Title" type="text" name="jobTitle" />
-          <TextInput label="Starting Date" type="date" name="starting-date" />
-          <TextInput label="Finishing Date" type="date" name="finishing-date" />
+          <TextInput label="Starting Date" type="date" name="startingDate" />
+          <TextInput label="Finishing Date" type="date" name="finishingDate" />
           <TextInput
             label="Job Description"
             type="textarea"

@@ -23,7 +23,29 @@ form {
   background: #fafafa;
   box-shadow: 0px 0.1875rem 0.4375rem rgb(0 0 0 / 25%);
   margin: 1rem;
-  padding: 2rem;
+}
+
+.general-info-div {
+  margin-bottom: 1rem;
+  padding: 2rem 2rem 0 2rem;
+}
+
+.education-info-div,
+.education-info-div input {
+  background: gainsboro;
+}
+
+.education-info-div {
+  padding: 1rem 2rem;
+}
+
+.work-info-div,
+.work-info-div input {
+  background: grey;
+}
+
+.work-info-div {
+  padding: 1rem 2rem;
 }
 
 label {
@@ -32,14 +54,16 @@ label {
   color: #ccc;
 }
 
-input {
-  color: #111;
+input,
+textarea {
+  color: #303030;
   width: 100%;
   border: none;
   border-bottom: 1px #ccc solid;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   outline: none;
 }
 
@@ -55,17 +79,59 @@ input:focus {
   border-color: #111;
 }
 
-button {
-  padding: 0.5rem 2.5rem;
-  font-size: 0.95rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  color: #fff;
-  background: #111;
-  border-radius: 100px;
+.form-buttons-div {
+  display: flex;
+  justify-content: center;
 }
 
-button:hover,
+.form-buttons-div > button {
+  margin: 0;
+  width: 100%;
+  font-weight: bold;
+  border: none;
+}
+
+.form-buttons-div > button:hover {
+  color: black;
+  background: lightgreen;
+}
+
+.infoCard {
+  padding: 1rem 0;
+  border-bottom: black 2px solid;
+  margin-bottom: 1rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+button {
+  display: inline-block;
+  margin: 6px;
+  line-height: 1.42;
+  padding: 0.6em 1.8em;
+  border-width: 3px;
+  border-style: solid;
+  background: transparent;
+  border-radius: 0;
+  cursor: pointer;
+  user-select: none;
+  vertical-align: bottom;
+  position: relative;
+  transition: background 0.5s, transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+  box-sizing: border-box;
+  border-color: black;
+}
+
+button:hover {
+  color: #e6eaef;
+  background: black;
+}
+
 button:focus {
-  background: lighten(#111, 13%);
+  outline: none;
 }

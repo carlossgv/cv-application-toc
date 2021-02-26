@@ -6,33 +6,36 @@ import ExpandableCard from './ExpandableCard';
 import Button from './Button';
 
 class Form extends Component {
-  constructor(props) {
-    super(props);
-
-    this.handleSubmit = this.handleSubmit.bind(props);
-  }
-
-  handleSubmit(e) {
-    console.log('im submitted');
-
-    e.preventDefault();
-  }
 
   render() {
     return (
-      <form method="POST">
+      <form>
         <div className="form-group general-info-div">
+          <h4>GENERAL INFORMATION</h4>
           <GeneralInfo />
         </div>
         <div className="form-group education-info-div">
-          <ExpandableCard type="education" buttonText="Add Education" />
+          <h4>EDUCATION</h4>
+          <ExpandableCard
+            type="education"
+            buttonTextAdd="Add Education"
+            buttonTextRemove="Remove Education"
+          />
         </div>
         <div className="form-group work-info-div">
-          <ExpandableCard type="job" buttonText="Add Work Experience" />
+          <h4>EXPERIENCE</h4>
+          <ExpandableCard
+            type="job"
+            buttonTextAdd="Add Experience"
+            buttonTextRemove="Remove Experience"
+          />
         </div>
         <div className="form-group form-buttons-div">
-          <Button type="submit" text="Submit CV" />
-          <Button type="button" text="Edit CV" />
+          <Button
+            type="submit"
+            text="Submit CV"
+            handleChange={this.props.handleSubmit}
+          />
         </div>
       </form>
     );
