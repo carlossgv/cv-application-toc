@@ -30,7 +30,7 @@ class InfoCard extends Component {
           <TextInput
             label="Job Description"
             type="textarea"
-            name="job-description"
+            name="jobDescription"
           />
         </div>
       );

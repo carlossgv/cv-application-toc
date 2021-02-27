@@ -17,6 +17,7 @@ class App extends React.Component {
   handleSubmit() {
     let form = document.querySelector('form');
     let formObject = {};
+    let cv = document.querySelector('.cv');
 
     [...form.elements].forEach((e) => {
       if (formObject[e.name] === undefined) {
@@ -29,6 +30,8 @@ class App extends React.Component {
       formObject[e.name].push(e.value);
     });
 
+    cv.classList.remove('hidden');
+
     this.setState({
       formInfo: formObject,
     });
@@ -37,9 +40,17 @@ class App extends React.Component {
   render() {
     let cvData = this.state.formInfo;
     return (
-      <div className="main">
-        <Form handleSubmit={this.handleSubmit} />
-        <Cv data={cvData} />
+      <div>
+        <header>
+          <h1>CV Builder</h1>
+        </header>
+        <div className="main">
+          <Form handleSubmit={this.handleSubmit} />
+          <Cv data={cvData} />
+        </div>
+        <footer>
+          <p>Created by Carlos Gonzalez carlossgv@gmail.com</p>
+        </footer>
       </div>
     );
   }
