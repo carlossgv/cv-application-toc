@@ -1,20 +1,17 @@
 import React from 'react';
+import { useState } from 'react';
 import Form from './components/Form';
 import Cv from './components/Cv';
 import './styles/App.css';
-class App extends React.Component {
-  constructor(props) {
-    super(props);
 
-    this.state = {
-      cvInfo: '',
-      formInfo: '',
-    };
+const App = () => {
+  const [formInfo, setFormInfo] = useState({
+    formData: '',
+    cvData: <div>Your CV will Load Here</div>,
+  });
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
 
-  handleSubmit() {
+  const handleSubmit = () => {
     let form = document.querySelector('form');
     let formObject = {};
     let cv = document.querySelector('.cv');
@@ -32,28 +29,26 @@ class App extends React.Component {
 
     cv.classList.remove('hidden');
 
-    this.setState({
-      formInfo: formObject,
+    setFormInfo({
+      formData: formObject,
+      cvData: formObject,
     });
-  }
+  };
 
-  render() {
-    let cvData = this.state.formInfo;
-    return (
-      <div>
-        <header>
-          <h1>CV Builder</h1>
-        </header>
-        <div className="main">
-          <Form handleSubmit={this.handleSubmit} />
-          <Cv data={cvData} />
-        </div>
-        <footer>
-          <p>Created by Carlos Gonzalez carlossgv@gmail.com</p>
-        </footer>
+  return (
+    <div>
+      <header>
+        <h1>CV Builder</h1>
+      </header>
+      <div className="main">
+        <Form handleSubmit={handleSubmit} />
+        <Cv data={formInfo.cvData} />
       </div>
-    );
-  }
-}
+      <footer>
+        <p>Created by Carlos Gonzalez carlossgv@gmail.com</p>
+      </footer>
+    </div>
+  );
+};
 
 export default App;
