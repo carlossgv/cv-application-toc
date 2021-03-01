@@ -10,11 +10,12 @@ const App = () => {
     cvData: <div>Your CV will Load Here</div>,
   });
 
-
   const handleSubmit = () => {
     let form = document.querySelector('form');
     let formObject = {};
-    let cv = document.querySelector('.cv');
+    let cvPlaceholder = document.querySelector('.cvPlaceholder');
+    let cvSide = document.querySelector('.cvSide');
+    let cvMain = document.querySelector('.cvMain');
 
     [...form.elements].forEach((e) => {
       if (formObject[e.name] === undefined) {
@@ -27,7 +28,9 @@ const App = () => {
       formObject[e.name].push(e.value);
     });
 
-    cv.classList.remove('hidden');
+    cvPlaceholder.remove();
+    cvSide.classList.remove('hidden');
+    cvMain.classList.remove('hidden');
 
     setFormInfo({
       formData: formObject,

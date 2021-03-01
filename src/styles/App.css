@@ -30,6 +30,13 @@
   }
 }
 
+.cvPlaceholder {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+
 .hidden > * {
   visibility: hidden;
 }
