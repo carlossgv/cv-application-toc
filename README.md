@@ -1,3 +1,3 @@
 # CV Application Project
 ## The Odin Project
-Made with React
+Live at: https://carlossgv.github.io/cv-application-toc/
